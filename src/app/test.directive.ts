@@ -28,7 +28,7 @@ export class TestDirective  implements OnInit, OnDestroy {
   this.interval = setInterval(() => {
     this.renderer.setStyle(this.el.nativeElement, 'visibility',
      this.showElement ? 'visible' : 'hidden');
-     console.log(this.showElement)
+
      this.showElement = !this.showElement;
 }, parseInt(this.ceTest) * 1000);
  }

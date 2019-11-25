@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TestComponent } from './test/test.component';
 import { HighlightDirective } from './highlight.directive';
 import { TestDirective } from './test.directive';
+import { TestService } from './test.service';
+import { MyToken } from './tokens/my-token.token';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { TestDirective } from './test.directive';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: MyToken, useFactory: () => new TestService(), multi: true},
+    { provide: MyToken, useFactory: () => new TestService(), multi: true}],
   bootstrap: [AppComponent],
 
 })

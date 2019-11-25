@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'ce-home',

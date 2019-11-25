@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { TestService } from '../test.service';
+import { Token } from '@angular/compiler/src/ml_parser/lexer';
+import { MyToken } from '../tokens/my-token.token';
 
 @Component({
   selector: 'ce-test',
@@ -9,7 +12,9 @@ export class TestComponent implements OnInit {
 
   public show = false;
   data = [0, 1, 2, 3];
-  constructor() { }
+  constructor(@Inject(MyToken) private testService: TestService) {
+    console.log(testService)
+  }
 
   ngOnInit() {
   }
