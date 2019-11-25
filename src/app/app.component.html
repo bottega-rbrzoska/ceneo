@@ -1,3 +1,2 @@
 <ce-home [homeTitle]="title"></ce-home>
-<ce-about [contact]="contact"></ce-about>
-
+<ce-about (changeName)="changeLastName($event)" [contact]="contact"></ce-about>

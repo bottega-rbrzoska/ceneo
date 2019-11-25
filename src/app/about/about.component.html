@@ -1,1 +1,3 @@
-<p>about works! {{contact}}</p>
+<p>about works! {{contact | json}}</p>
+New name: <input #myNameInput>
+<button (click)="changeName.emit(myNameInput.value)">Change Name</button>
