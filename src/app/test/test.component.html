@@ -1,0 +1,12 @@
+
+<ng-template [ngIf]="!show">
+  <p>test works!</p>
+</ng-template>
+
+<p *ngIf="show">test works!</p>
+
+<ng-template ngFor [ngForOf]="data" let-item let-isOdd="odd">
+  <li [ngClass]="{highlight: isOdd}">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>
+</ng-template>
+--------
+<li *ngFor="let item of data; odd as isOdd" ceTest="2">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>

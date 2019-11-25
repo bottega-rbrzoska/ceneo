@@ -10,6 +10,11 @@ import { ProductEditComponent } from './product/product-edit/product-edit.compon
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductFormComponent } from './product/product-form/product-form.component';
 import { ProductsComponent } from './product/products/products.component';
+import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TestComponent } from './test/test.component';
+import { HighlightDirective } from './highlight.directive';
+import { TestDirective } from './test.directive';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,18 @@ import { ProductsComponent } from './product/products/products.component';
     ProductEditComponent,
     ProductListComponent,
     ProductFormComponent,
-    ProductsComponent
+    ProductsComponent,
+    PageNotFoundComponent,
+    TestComponent,
+    HighlightDirective,
+    TestDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

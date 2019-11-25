@@ -1,2 +1,5 @@
-<ce-home [homeTitle]="title"></ce-home>
-<ce-about (changeName)="changeLastName($event)" [contact]="contact"></ce-about>
+<a routerLink="/">Home</a>
+<a [routerLink]="['/products']">Products</a>
+<a [routerLink]="['/test']">Test</a>
+
+<router-outlet></router-outlet>
