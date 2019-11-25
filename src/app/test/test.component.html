@@ -5,8 +5,17 @@
 
 <p *ngIf="show">test works!</p>
 
-<ng-template ngFor [ngForOf]="data" let-item let-isOdd="odd">
+<ng-template ngFor [ngForOf]="data" let-item let-isOdd="odd" ceHighlight="cccc">
   <li [ngClass]="{highlight: isOdd}">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>
 </ng-template>
 --------
-<li *ngFor="let item of data; odd as isOdd" ceTest="2">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>
+<li *ngFor="let item of data; odd as isOdd"  ceHighlight="cccc" ceTest="2">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>
+
+<div
+#divTestDirective="ceTestRef"
+ceTest="1"
+style="width:300px; height:200px; border: 1px solid black; padding: 5px;" >
+  Box
+</div>
+<button (click)="divTestDirective.startBlink()">Switch on blink</button>
+<button (click)="divTestDirective.stopBlink()">Switch off blink</button>
