@@ -6,11 +6,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TestComponent } from './test/test.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'about/:name', component: AboutComponent, canActivate: [AuthGuard] },
+  { path: 'contact', component: ContactComponent },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
   { path: 'products', loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},  { path: 'test', component: TestComponent },
   { path: '**', component: PageNotFoundComponent}
 ];

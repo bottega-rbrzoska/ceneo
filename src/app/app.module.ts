@@ -19,7 +19,10 @@ import { TestService } from './test.service';
 import { MyToken } from './tokens/my-token.token';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ContactComponent } from './contact/contact.component';
+import { ReactiveComponent } from './contact/reactive/reactive.component';
+import { TemplateComponent } from './contact/template/template.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,16 @@ import { HttpClientModule } from '@angular/common/http';
     TestComponent,
     HighlightDirective,
     TestDirective,
-    NavigationComponent
+    NavigationComponent,
+    ContactComponent,
+    ReactiveComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [TestService],
