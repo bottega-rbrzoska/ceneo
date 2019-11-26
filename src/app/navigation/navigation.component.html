@@ -5,8 +5,8 @@
         <a class="nav-item nav-link" routerLink="/test">Test</a>
     </div>
     <div>
-        <button class="btn btn-warning mr-1">LogIn</button>
-        <button class="btn btn-danger">LogOut</button>
+        <button *ngIf="!isLoggedIn" (click)="login()" class="btn btn-warning mr-1">LogIn</button>
+        <button *ngIf="isLoggedIn" (click)="logout()" class="btn btn-danger">LogOut</button>
 
     </div>
 </nav>
