@@ -2,6 +2,19 @@
 <div class="d-flex w-100 h-100 flex-row justify-content-between">
   <div style="width: 100px">sidebar</div>
   <div style="width: 500px">
+    <ng-container *ngIf="(testData$ | async) as data; else loader">
+
+        <code>
+            {{data | json}}
+
+
+            <p>
+                {{data | json}}</p>
+          </code>
+    </ng-container>
+    <ng-template #loader>
+      Loading ........
+    </ng-template>
     <ng-template [ngIf]="!show">
       <p>test works!</p>
     </ng-template>
@@ -25,3 +38,5 @@
 
   </div>
 </div>
+
+{{testData$ | async | json}}

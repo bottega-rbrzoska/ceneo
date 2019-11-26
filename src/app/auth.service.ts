@@ -6,13 +6,14 @@ import { Subject } from 'rxjs';
 })
 export class AuthService {
 
-  isLoggedIn$ = new Subject<boolean>();
+  private isLoggedInSubj = new Subject<boolean>();
 
+  isLoggedIn$ = this.isLoggedInSubj.asObservable();
   logIn() {
-    this.isLoggedIn$.next(true);
+    this.isLoggedInSubj.next(true);
   }
 
   logOut() {
-    this.isLoggedIn$.next(false);
+    this.isLoggedInSubj.next(false);
   }
 }

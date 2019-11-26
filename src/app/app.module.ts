@@ -18,6 +18,7 @@ import { TestDirective } from './test.directive';
 import { TestService } from './test.service';
 import { MyToken } from './tokens/my-token.token';
 import { NavigationComponent } from './navigation/navigation.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,10 +39,10 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [{ provide: MyToken, useFactory: () => new TestService(), multi: true},
-    { provide: MyToken, useFactory: () => new TestService(), multi: true}],
+  providers: [TestService],
   bootstrap: [AppComponent],
 
 })
