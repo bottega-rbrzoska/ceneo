@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from 'src/app/models/product.interface';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'ce-products',
@@ -9,10 +11,13 @@ import { Product } from 'src/app/models/product.interface';
 })
 export class ProductsComponent implements OnInit {
 
-  products: Product[];
-  constructor(private productService: ProductService) {
-    this.products = productService.getProducts();
+  products$: Observable<Product[]>;
+  constructor(private productService: ProductService, private authService: AuthService) {
+    this.products$ = productService.products$;
+    productService.getProducts();
+    authService.isLoggedIn$.subscribe(console.log);
    }
+
 
   ngOnInit() {
   }

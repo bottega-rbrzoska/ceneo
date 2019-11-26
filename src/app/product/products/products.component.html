@@ -1,1 +1,2 @@
-<ce-product-list [products]="products"></ce-product-list>
+<ce-product-list [products]="products$ | async"></ce-product-list>
+{{ products$ | async | json}}
