@@ -13,7 +13,6 @@ export class ProductService {
   products$ = this.productsSubj.asObservable();
   private products: Product[] = [
     {
-      avatar: 'testimgurl',
       description: 'descrprod1',
       category: 'inne',
       name: 'prod1',
@@ -21,7 +20,6 @@ export class ProductService {
       id: '1'
     },
     {
-      avatar: 'testimgurl',
       description: 'descrprod2',
       category: 'inne',
       name: 'prod2',
@@ -29,7 +27,6 @@ export class ProductService {
       id: '2'
     },
     {
-      avatar: 'testimgurl',
       description: 'descrprod3',
       category: 'inne',
       name: 'prod3',
