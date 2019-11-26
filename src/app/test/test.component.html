@@ -1,21 +1,27 @@
 
-<ng-template [ngIf]="!show">
-  <p>test works!</p>
-</ng-template>
+<div class="d-flex w-100 h-100 flex-row justify-content-between">
+  <div style="width: 100px">sidebar</div>
+  <div style="width: 500px">
+    <ng-template [ngIf]="!show">
+      <p>test works!</p>
+    </ng-template>
 
-<p *ngIf="show">test works!</p>
+    <p *ngIf="show">test works!</p>
 
-<ng-template ngFor [ngForOf]="data" let-item let-isOdd="odd" ceHighlight="cccc">
-  <li [ngClass]="{highlight: isOdd}">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>
-</ng-template>
---------
-<li *ngFor="let item of data; odd as isOdd"  ceHighlight="cccc" ceTest="2">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>
+    <ng-template ngFor [ngForOf]="data" let-item let-isOdd="odd" ceHighlight="cccc">
+      <li [ngClass]="{highlight: isOdd}">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>
+    </ng-template>
+    --------
+    <li *ngFor="let item of data; odd as isOdd"  ceHighlight="cccc" ceTest="2">{{item}} {{isOdd ? 'is odd' : 'is even'}}</li>
 
-<div
-#divTestDirective="ceTestRef"
-ceTest="1"
-style="width:300px; height:200px; border: 1px solid black; padding: 5px;" >
-  Box
+    <div
+    #divTestDirective="ceTestRef"
+    ceTest="1"
+    style="width:300px; height:200px; border: 1px solid black; padding: 5px;" >
+      Box
+    </div>
+    <button class="btn btn-primary" (click)="divTestDirective.startBlink()">Switch on blink</button>
+    <button class="btn btn-danger" (click)="divTestDirective.stopBlink()">Switch off blink</button>
+
+  </div>
 </div>
-<button (click)="divTestDirective.startBlink()">Switch on blink</button>
-<button (click)="divTestDirective.stopBlink()">Switch off blink</button>
