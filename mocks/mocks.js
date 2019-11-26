@@ -8,7 +8,7 @@ const user = {
 
 const config = {
   path: '/config',
-  delay: 1000,
+  delay: 2000,
   template: {
     apiurl: 'http://localhost:3001'
   }
