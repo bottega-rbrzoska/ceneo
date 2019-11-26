@@ -4,12 +4,14 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TestComponent } from './test/test.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about/:name', component: AboutComponent },
-  { path: 'products', loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},  { path: 'test', component: TestComponent },
+  { path: 'products', canActivate: [AuthGuard], loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},  { path: 'test', component: TestComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 // /product productsComponent
