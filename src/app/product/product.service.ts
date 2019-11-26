@@ -41,7 +41,9 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts() {
-    this.http.get<Product[]>('/api/products').pipe(delay(10000)).subscribe(prods => this.productsSubj.next(prods));
+    this.http.get<Product[]>('/api/products', {
+      params: { _page: '1', _limit: '10'}
+    }).pipe(delay(1)).subscribe(prods => this.productsSubj.next(prods));
   }
 
   getPoductById(id: string): Product {
