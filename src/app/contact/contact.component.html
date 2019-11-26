@@ -27,7 +27,9 @@
             <label for="message">Message</label>
             <textarea formControlName="message" class="form-control" id="message" placeholder="Message"></textarea>
           </div>
+          <ce-nie-wiem-button formControlName="niewiem"></ce-nie-wiem-button>
           <button  class="btn btn-primary">Submit</button>
         </form>
+        {{reactiveForm.value | json}}
     </div>
   </div>

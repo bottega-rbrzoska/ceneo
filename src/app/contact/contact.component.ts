@@ -10,6 +10,7 @@ export class ContactComponent implements OnInit {
 
   templateEmail = '';
   reactiveForm = this.fb.group({
+    niewiem: this.fb.control(''),
     email: this.fb.control('', [this.dupaValidator, Validators.email]),
     message: this.fb.control('', Validators.maxLength(100))
   });
@@ -28,6 +29,7 @@ export class ContactComponent implements OnInit {
   }
 
   dupaValidator(control: AbstractControl) {
+
     return control.value.includes('dupa') ? { dupaWMailu: true } : null;
   }
 }

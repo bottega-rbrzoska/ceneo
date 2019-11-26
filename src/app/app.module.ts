@@ -23,6 +23,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ReactiveComponent } from './contact/reactive/reactive.component';
 import { TemplateComponent } from './contact/template/template.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NieWiemButtonComponent } from './nie-wiem-button/nie-wiem-button.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavigationComponent,
     ContactComponent,
     ReactiveComponent,
-    TemplateComponent
+    TemplateComponent,
+    NieWiemButtonComponent
   ],
   imports: [
     BrowserModule,
