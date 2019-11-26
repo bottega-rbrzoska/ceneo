@@ -17,6 +17,7 @@ import { HighlightDirective } from './highlight.directive';
 import { TestDirective } from './test.directive';
 import { TestService } from './test.service';
 import { MyToken } from './tokens/my-token.token';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MyToken } from './tokens/my-token.token';
     PageNotFoundComponent,
     TestComponent,
     HighlightDirective,
-    TestDirective
+    TestDirective,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
