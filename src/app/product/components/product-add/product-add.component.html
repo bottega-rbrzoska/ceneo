@@ -1,5 +1,6 @@
 <ng-container *ngIf="(selectData$ | async) as selectData; else loader">
-    <ce-product-form [countries]="selectData[1]" [categories]="selectData[0]" (save)="handleSave($event)"></ce-product-form>
+    <ce-product-form [countries]="selectData[1]"
+    [categories]="selectData[0]" (save)="handleSave($event)"></ce-product-form>
 
 </ng-container>
 <ng-template #loader>

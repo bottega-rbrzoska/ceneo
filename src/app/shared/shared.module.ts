@@ -4,12 +4,14 @@ import {HighlightDirective} from './directives/highlight.directive';
 import {TestDirective} from './directives/test.directive';
 import {NieWiemButtonComponent} from './components/nie-wiem-button/nie-wiem-button.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { MyIfDirective } from './directives/my-if.directive';
 
 @NgModule({
   declarations: [
     HighlightDirective,
     TestDirective,
-    NieWiemButtonComponent
+    NieWiemButtonComponent,
+    MyIfDirective
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import {ReactiveFormsModule} from '@angular/forms';
   exports: [
     HighlightDirective,
     TestDirective,
-    NieWiemButtonComponent
+    NieWiemButtonComponent,
+    MyIfDirective
   ]
 })
 export class SharedModule {

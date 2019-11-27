@@ -8,6 +8,7 @@ import { TestService } from '../../core/test.service';
 })
 export class HomeComponent implements OnInit {
 
+  items = 0;
   @Input() homeTitle: string;
 
   constructor() {
