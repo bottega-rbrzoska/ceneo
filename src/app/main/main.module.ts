@@ -9,6 +9,7 @@ import {ContactComponent} from './contact/contact.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../shared/shared.module';
+import { ViewChildComponent } from './view-child/view-child.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {SharedModule} from '../shared/shared.module';
     PageNotFoundComponent,
     TestComponent,
     NavigationComponent,
-    ContactComponent],
+    ContactComponent,
+    ViewChildComponent],
   imports: [
     CommonModule,
     SharedModule,

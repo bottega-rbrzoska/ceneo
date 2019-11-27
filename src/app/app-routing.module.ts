@@ -7,6 +7,7 @@ import { TestComponent } from './main/test/test.component';
 import { AuthService } from './core/auth.service';
 import { AuthGuard } from './core/auth.guard';
 import { ContactComponent } from './main/contact/contact.component';
+import { ViewChildComponent } from './main/view-child/view-child.component';
 
 
 const routes: Routes = [
@@ -15,8 +16,9 @@ const routes: Routes = [
   { path: 'about/:name', component: AboutComponent },
   { path: 'products',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},
-  { path: 'test', component: TestComponent },
-  { path: '**', component: PageNotFoundComponent}
+    { path: 'test', component: TestComponent },
+    { path: 'view-child', component: ViewChildComponent },
+    { path: '**', component: PageNotFoundComponent}
 ];
 // /product productsComponent
 // /product/add addProduct
