@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../../core/auth.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
+import { UserStore } from 'src/app/core/user.store';
+import { UserState } from 'src/app/core/user.state';
 
 @Component({
   selector: 'ce-navigation',
@@ -12,8 +14,10 @@ export class NavigationComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   isLoggedIn: boolean;
   name = 'Alojzy';
-  constructor(private authService: AuthService) {
+  userState$: Observable<UserState>;
+  constructor(private authService: AuthService, private userStore: UserStore) {
    this.subscription =  authService.isLoggedIn$.subscribe( l => this.isLoggedIn = l );
+   this.userState$ = this.userStore.state$;
   }
 
   ngOnInit() {

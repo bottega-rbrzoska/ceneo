@@ -5,6 +5,7 @@ import {AuthService} from './auth.service';
 import {AuthGuard} from './auth.guard';
 import {SharedModule} from '../shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
+import { UserStore } from './user.store';
 
 @NgModule({
   declarations: [],
@@ -13,6 +14,6 @@ import {HttpClientModule} from '@angular/common/http';
     CommonModule,
     HttpClientModule
   ],
-  providers: [TestService, AuthService, AuthGuard]
+  providers: [TestService, AuthService, AuthGuard, UserStore]
 })
 export class CoreModule { }

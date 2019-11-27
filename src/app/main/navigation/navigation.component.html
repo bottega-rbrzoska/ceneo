@@ -7,6 +7,7 @@
         <a class="nav-item nav-link" [routerLink]="['/about', name ]">About</a>
     </div>
     <div>
+      <div>{{(userState$ | async)?.userData?.name}}</div>
         <button *ngIf="!isLoggedIn" (click)="login()" class="btn btn-warning mr-1">LogIn</button>
         <button *ngIf="isLoggedIn" (click)="logout()" class="btn btn-danger">LogOut</button>
 
