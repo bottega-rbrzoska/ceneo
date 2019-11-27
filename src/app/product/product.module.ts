@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
-import { ProductAddComponent } from './product-add/product-add.component';
-import { ProductEditComponent } from './product-edit/product-edit.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ProductService } from './services/product.service';
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: ProductsComponent },
   { path: 'add', component: ProductAddComponent },
   { path: 'edit/:id', component: ProductEditComponent }
-]
+];
 @NgModule({
   declarations: [
 
@@ -23,7 +25,9 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
-  ]
+    RouterModule.forChild(routes),
+    ReactiveFormsModule
+  ],
+  providers: [ProductService]
 })
 export class ProductModule { }

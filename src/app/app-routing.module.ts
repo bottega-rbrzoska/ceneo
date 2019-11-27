@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule,  } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { TestComponent } from './test/test.component';
-import { AuthService } from './auth.service';
-import { AuthGuard } from './auth.guard';
-import { ContactComponent } from './contact/contact.component';
+import { HomeComponent } from './main/home/home.component';
+import { AboutComponent } from './main/about/about.component';
+import { PageNotFoundComponent } from './main/page-not-found/page-not-found.component';
+import { TestComponent } from './main/test/test.component';
+import { AuthService } from './core/auth.service';
+import { AuthGuard } from './core/auth.guard';
+import { ContactComponent } from './main/contact/contact.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
-  { path: 'products', loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},  { path: 'test', component: TestComponent },
+  { path: 'products',
+    loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},
+  { path: 'test', component: TestComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 // /product productsComponent
