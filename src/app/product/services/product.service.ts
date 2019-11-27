@@ -45,6 +45,14 @@ export class ProductService {
     return this.products.find(x => x.id === id);
   }
 
+  getCountries() {
+    return this.http.get('/test-api/countries');
+  }
+
+  getCategories() {
+    return this.http.get('/test-api/categories');
+  }
+
   searchProductByNameOrDescription(query: string) {
     return this.products.filter( p => p.description.includes(query) || p.name.includes(query));
   }

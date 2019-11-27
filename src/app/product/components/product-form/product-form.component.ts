@@ -10,6 +10,8 @@ import {Product} from '../../../models/product.interface';
 export class ProductFormComponent implements OnInit {
 
   @Input() product: Product[];
+  @Input() countries;
+  @Input() categories;
   @Output() save = new EventEmitter();
   productForm = new FormGroup({
     name: new FormControl('', Validators.required),

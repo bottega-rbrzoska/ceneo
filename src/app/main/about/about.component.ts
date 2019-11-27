@@ -18,7 +18,8 @@ export class AboutComponent implements OnInit, OnDestroy {
   name: string;
   testData: string;
   constructor(private route: ActivatedRoute, testService: TestService) {
-    merge(testService.getTestData(), testService.getRandomValue()).subscribe(console.log)
+    forkJoin(testService.getTestData(), testService.getRandomValue())
+    .subscribe(console.log)
 
     route.params.
     pipe(
