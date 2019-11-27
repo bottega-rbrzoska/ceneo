@@ -10,11 +10,11 @@ export class TestService {
    }
 
    getTestData() {
-     return this.http.get('http://localhost:3000/test');
+     return this.http.get('/test-api/config');
    }
 
    getRandomValue() {
-     return this.http.get<any>('http://localhost:3001')
+     return this.http.get<any>('/test-api/rand')
      .pipe(map(x => x.val));
    }
 }

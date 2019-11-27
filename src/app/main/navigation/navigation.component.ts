@@ -11,6 +11,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
   isLoggedIn: boolean;
+  name = 'Alojzy';
   constructor(private authService: AuthService) {
    this.subscription =  authService.isLoggedIn$.subscribe( l => this.isLoggedIn = l );
   }

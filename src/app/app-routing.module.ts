@@ -12,7 +12,7 @@ import { ContactComponent } from './main/contact/contact.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
+  { path: 'about/:name', component: AboutComponent },
   { path: 'products',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)},
   { path: 'test', component: TestComponent },
